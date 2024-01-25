@@ -9,25 +9,18 @@ public class UserLoginApplication {
 	public static void main(String[] args) {
 
 		UserService userService = new UserService();
-		ArrayList<User> userArray = new ArrayList<User>();
+		User[] userArray = new User[5];
 		User user = new User();
+				
+		//userArray = userService.returnUserDataFromFile(); //.clone();
 		
-		//user = userService.returnUserInput();
-		//System.out.println("Username: " + user.getUsername() + " password: " + user.getPassword());
-		//System.out.println("user: " + userName + " Pass: " + password);
+		userService.userValidation(userService.returnUserDataFromFile(), userService.returnUserInput());
 		
-		userArray = userService.returnUserDataFromFile();
-		
-//		System.out.println(userArray.get(0));
-//		System.out.println(userArray.get(1));
-		
-//		for (User us: userArray) {
-//			System.out.println(us.getUsername() + us.getPassword() + us.getName());
+//		for (int i = 0; i < 5; i++) {
+//			System.out.println(userArray[i].getUsername());
 //		}
 		
-		//user = userArray.get(4);
-		//System.out.println(user.getUsername() + user.getPassword() + user.getName());
-		//System.out.println(userService.returnUserDataFromFile());
+		
 		
 	}
 
