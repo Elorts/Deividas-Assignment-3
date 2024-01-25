@@ -11,17 +11,18 @@ public class UserLoginApplication {
 		UserService userService = new UserService();
 		User[] userArray = new User[5];
 		User user = new User();
-				
-		//userArray = userService.returnUserDataFromFile(); //.clone();
+		int i = 0;
+		boolean isFound = false;
+		String name = "";
 		
-		userService.userValidation(userService.returnUserDataFromFile(), userService.returnUserInput());
-		
-//		for (int i = 0; i < 5; i++) {
-//			System.out.println(userArray[i].getUsername());
-//		}
-		
-		
-		
+		while (i < 5 && isFound == false) {
+			
+			name = userService.userValidation(userService.returnUserDataFromFile(), userService.returnUserInput());
+			if (name.equals("") ) {
+				i++;
+			} else {
+				isFound = true;
+			}
+		}
 	}
-
 }
