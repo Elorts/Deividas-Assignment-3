@@ -4,40 +4,22 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserService {
 
-	// Returns user input
-	public User returnUserInput() {
-
-		Scanner userEntry = new Scanner(System.in);
-		User user = new User();
-
-		System.out.println("Enter username: ");
-		user.setUsername(userEntry.nextLine());
-
-		System.out.println("Enter password: ");
-		user.setPassword(userEntry.nextLine());
-
-		userEntry.close();
-
-		return user;
-	}
-
-	// Returns array of data from the data file
+	// Returns array of Users from the data file
 	public User[] returnUserDataFromFile() {
 
 		BufferedReader fileReader = null;
-		String line;
-		User[] userArray = new User[5];
+		User[] userArray = new User[4];
 		String[] splittedString;
+		String line;
 
 		try {
 			fileReader = new BufferedReader(new FileReader("data.txt"));
 
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 4; i++) {
 				User user = new User();
 				line = fileReader.readLine();
 				splittedString = line.split(",");
@@ -57,24 +39,35 @@ public class UserService {
 		} finally {
 			try {
 				fileReader.close();
-				System.out.println("File closed");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 		}
 
 		return userArray;
 	}
 
-	// Validates data
+	// Returns user input
+	public User returnUserInput(Scanner userEntry) {
+		
+		User user = new User();
+
+		System.out.println("Enter username: ");
+		user.setUsername(userEntry.nextLine());
+
+		System.out.println("Enter password: ");
+		user.setPassword(userEntry.nextLine());
+
+		return user;
+	}
+	
+	// Validates the data
 	public String userValidation(User[] userArray, User userEntry) {
 		boolean found = false;
 		int i = 0;
 
-		while (found == false && i < 5) {
+		while (found == false && i < 4) {
 			if (userArray[i].getUsername().equals(userEntry.getUsername())) {
-				System.out.println("Found!! : " + userEntry.getUsername());
 				found = true;
 			} else {
 				i++;
@@ -82,13 +75,9 @@ public class UserService {
 		}
 
 		if (found == true) {
-			System.out.println("Welcome " + userArray[i].getName());
 			return userArray[i].getName();
 		} else {
-			System.out.println("Invalid login, please try again.");
 			return "";
 		}
-
 	}
-
 }
