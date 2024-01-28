@@ -1,8 +1,5 @@
 package com.coderscampus.assignment3;
 
-import com.coderscampus.assignment3.FileService;
-import com.coderscampus.assignment3.User;
-
 public class UserServiceRoche {
     private User[] userArray;
 

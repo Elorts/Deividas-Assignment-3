@@ -5,7 +5,7 @@ import com.coderscampus.assignment3.temp.UserServiceRoche;
 import java.util.Scanner;
 
 public class UserLoginApplication {
-    
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -35,7 +35,6 @@ public class UserLoginApplication {
 
         scanner.close();
     }
-
 
     private static String promptUserInput(Scanner scanner, String promptMsg) {
         System.out.println(promptMsg);
