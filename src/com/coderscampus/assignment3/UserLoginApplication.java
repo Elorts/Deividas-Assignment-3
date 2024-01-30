@@ -1,7 +1,6 @@
 package com.coderscampus.assignment3;
 
 import com.coderscampus.assignment3.temp.UserServiceRoche;
-
 import java.util.Scanner;
 
 public class UserLoginApplication {
@@ -39,7 +38,6 @@ public class UserLoginApplication {
     private static String promptUserInput(Scanner scanner, String promptMsg) {
         System.out.println(promptMsg);
         String userInput = scanner.nextLine();
-
         return userInput;
     }
 }
