@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class UserService {
 
-	// Returns array of Users from the data file
 	public User[] returnUserDataFromFile() {
 
 		BufferedReader fileReader = null;
