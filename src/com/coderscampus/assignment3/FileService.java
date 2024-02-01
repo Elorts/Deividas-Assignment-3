@@ -14,6 +14,7 @@ public class FileService {
 		String[] splittedString;
 		String line;
 
+		// file located on root dir
 		try {
 			fileReader = new BufferedReader(new FileReader("c:\\data.txt"));
 
