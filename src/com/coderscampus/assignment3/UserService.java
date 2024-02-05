@@ -67,7 +67,7 @@ public class UserService {
 		int i = 0;
 
 		while (found == false && i < 4) {
-			if (userArray[i].getUsername().equals(userEntry.getUsername())) {
+			if ((userArray[i].getUsername()).toLowerCase().equals(userEntry.getUsername().toLowerCase())) {
 				found = true;
 			} else {
 				i++;
