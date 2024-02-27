@@ -46,7 +46,6 @@ public class UserService {
 		return userArray;
 	}
 
-	// Returns user input
 	public User returnUserInput(Scanner userEntry) {
 		
 		User user = new User();
