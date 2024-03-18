@@ -40,5 +40,4 @@ public class UserLoginApplication {
         String userInput = scanner.nextLine();
         return userInput;
     }
-    
 }
