@@ -34,7 +34,6 @@ public class UserLoginApplication {
 
         scanner.close();
     }
-
     private static String promptUserInput(Scanner scanner, String promptMsg) {
         System.out.println(promptMsg);
         String userInput = scanner.nextLine();
