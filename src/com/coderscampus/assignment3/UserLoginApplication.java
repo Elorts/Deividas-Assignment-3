@@ -28,6 +28,7 @@ public class UserLoginApplication {
 
             loginCounter++;
         }
+
         if (loggedInUser == null) {
             System.out.println("Too many failed logins! Logged out!");
         }
